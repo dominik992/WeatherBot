@@ -1,0 +1,52 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures" : {
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "no-empty-label": 0,
+    "radix": 0,
+    "space-before-keywords": 0,
+    "space-after-keywords": 0,
+    "space-return-throw-case": 0,
+    "no-iterator": 0,
+    "no-shadow": 0,
+    "func-names": 0,
+    "no-unused-expressions": 0,
+    /*
+      http://eslint.org/docs/rules/no-param-reassign
+
+      `no-param-reassign` prevents modifying variables declared as function
+      parameters. However, most express middleware works by receiving and
+      modifying request/response objects, so this rule needs to be relaxed.
+    */
+    "no-param-reassign": [2, { "props": false }],
+    /*
+      http://eslint.org/docs/rules/no-unused-vars
+
+      `no-unused-vars` makes eslint complain if declared variables are not used
+      anywhere. In express.js, all error-handling middleware must have arity 4
+      (i.e. `err, req, res, next`), but `next` is rarely called. This causes
+      linting errors, but if `next` is removed, the function will no longer act
+      as an error-handler.
+    */
+    "no-unused-vars": [2, { "argsIgnorePattern": "next" }],
+    "no-underscore-dangle": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}
