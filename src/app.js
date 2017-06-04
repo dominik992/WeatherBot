@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { Logger } from './shared/logging/logger';
-import loggingConfig from './config/logging';
+import loggingConfig from './shared/logging/config/logging';
 import bot from './bot';
 const isProd = process.env.NODE_ENV === 'production';
 const loggerOptions = {

@@ -21,7 +21,7 @@ describe.only('Message handler middleware', () => {
     };
     return {
       responseMessage, payload, weather,
-      mockWeatherRepo, mockBuildResponseMessage, mockLogger
+      mockWeatherRepo, mockBuildResponseMessage, mockLogger,
     };
   }
 
@@ -48,7 +48,7 @@ describe.only('Message handler middleware', () => {
 
   it('Logs error from weather repo', (done) => {
     const {
-      payload, mockBuildResponseMessage, mockLogger
+      payload, mockBuildResponseMessage, mockLogger,
     } = getMockData();
     const err = new Error('some error');
     const mockWeatherRepo = {

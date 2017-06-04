@@ -35,7 +35,7 @@ Transpile source to `./build` folder and `watch` for changes made to source file
 npm start 
 ```
 
-Start the server on production, `port 80`.
+Start the server on production
 
 ```
 npm run start:dev 

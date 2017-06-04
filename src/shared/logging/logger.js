@@ -1,7 +1,7 @@
 import bunyan from 'bunyan';
 import path from 'path';
 
-import loggingConfig from '../../config/logging';
+import loggingConfig from './config/logging';
 
 const DEFAULT_LOG_LEVEL = 'info';
 const DEFAULT_LOG_DIR = 'logs';
