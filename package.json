@@ -3,13 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "npm run clean && npm run api-docs && babel --out-dir ./build ./src",
+    "build": "npm run clean && babel --out-dir ./build ./src",
     "build:watch": "npm run build -- --watch",
     "clean": "rimraf ./build",
     "lint": "eslint ./src",
     "start": "node ./build/www.js",
     "start:dev": "nodemon ./build/www.js --watch ./build/",
-    "api-docs": "api-docs -f build/public/api-docs src",
     "test": "mocha -R spec --compilers js:babel-core/register \"src/**/*spec.js\"",
     "review": "npm prune && npm install && npm run build && npm test && npm run lint"
   },
