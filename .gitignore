@@ -42,10 +42,3 @@ node_modules
 
 # Environment variables
 .env
-
-# Migration state file
-.migrate
-
-# API docs output file
-/api.json
-

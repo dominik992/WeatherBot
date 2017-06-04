@@ -1,16 +1,16 @@
 import Bot from 'messenger-bot';
 import config from './config';
-import Promise from 'bluebird';
 import messageHandler from './middleware/message-handler';
+import logger from '../shared/logging/logger';
+
 const bot = new Bot({
   token: config.token,
   verify: config.verify,
   app_secret: config.secret,
 });
-Promise.promisifyAll(bot);
 
 bot.on('error', (err) => {
-  throw err;
+  logger.error(err);
 });
 
 bot.on('message', messageHandler());
