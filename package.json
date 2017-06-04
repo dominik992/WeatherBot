@@ -7,7 +7,7 @@
     "build:watch": "npm run build -- --watch",
     "clean": "rimraf ./build",
     "lint": "eslint ./src",
-    "start": "node ./build/www.js",
+    "start": "pm2 start ./build/www.js",
     "start:dev": "nodemon ./build/www.js --watch ./build/",
     "test": "mocha -R spec --compilers js:babel-core/register \"src/**/*spec.js\"",
     "review": "npm prune && npm install && npm run build && npm test && npm run lint"
@@ -32,6 +32,7 @@
     "newrelic": "1.37.2",
     "normalize-path": "2.0.1",
     "passport": "0.3.2",
+    "pm2": "2.4.6",
     "proxyquire": "1.8.0",
     "request-promise": "4.1.1",
     "tar": "2.2.1",

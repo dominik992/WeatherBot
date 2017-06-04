@@ -81,6 +81,17 @@ Linting is done via [eslint](http://eslint.org/) using Five's [JavaScript style 
 Installing packages (either with --save or --save-dev) is locked to exact version with `.npmrc` file. Use `ncu` command to check which packages need to be updated and to update them. Run `npm test` to make sure everything is working after updating packages as it should.
 
 
+## Connecting local server to Facebook messenger
+
+To connect your local server with Facebook messenger use we recommend using `ngrok` tool.
+Download and install it to your machine and then run `ngrok http <NODE_PORT>`.
+Copy the https link from console and paste it as to a Facebook messenger webhook section.
+
+## Connecting production server to Facebook messenger
+
+Setup ssl certificate for https connections on your server. Then setup facebook webhook pointing to your server.
+
+
 ## Learn more
 
 - [ECMAScript 6 features](https://github.com/lukehoban/es6features) ([pretty print](https://babeljs.io/docs/learn-es2015/))
