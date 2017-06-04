@@ -8,7 +8,6 @@ export class WeatherRepository {
       .segment(`/data/${config.weatherApiVersion}/forecast`)
       .query({ q: city, appid: config.weatherApiKey, units: 'metric' })
       .toString();
-    console.log(uri);
     return request({
       json: true,
       method: 'GET',
